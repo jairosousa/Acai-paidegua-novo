@@ -1,0 +1,78 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-caracteristica-heading" jhiTranslate="newacaipaideguaApp.caracteristica.home.createOrEditLabel">Create or edit a Caracteristica</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!caracteristica.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="caracteristica.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newacaipaideguaApp.caracteristica.possuiSelo" for="field_possuiSelo">Possui Selo</label>
+                    <input type="checkbox" class="form-control" name="possuiSelo" id="field_possuiSelo"
+                        [(ngModel)]="caracteristica.possuiSelo" />
+                    <div [hidden]="!(editForm.controls.possuiSelo?.dirty && editForm.controls.possuiSelo?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.possuiSelo?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newacaipaideguaApp.caracteristica.possuiRestaurante" for="field_possuiRestaurante">Possui Restaurante</label>
+                    <input type="checkbox" class="form-control" name="possuiRestaurante" id="field_possuiRestaurante"
+                        [(ngModel)]="caracteristica.possuiRestaurante" />
+                    <div [hidden]="!(editForm.controls.possuiRestaurante?.dirty && editForm.controls.possuiRestaurante?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.possuiRestaurante?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newacaipaideguaApp.caracteristica.areaProducaoIsolada" for="field_areaProducaoIsolada">Area Producao Isolada</label>
+                    <input type="checkbox" class="form-control" name="areaProducaoIsolada" id="field_areaProducaoIsolada"
+                        [(ngModel)]="caracteristica.areaProducaoIsolada" />
+                    <div [hidden]="!(editForm.controls.areaProducaoIsolada?.dirty && editForm.controls.areaProducaoIsolada?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.areaProducaoIsolada?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newacaipaideguaApp.caracteristica.cobraTaxaEntrega" for="field_cobraTaxaEntrega">Cobra Taxa Entrega</label>
+                    <input type="checkbox" class="form-control" name="cobraTaxaEntrega" id="field_cobraTaxaEntrega"
+                        [(ngModel)]="caracteristica.cobraTaxaEntrega" />
+                    <div [hidden]="!(editForm.controls.cobraTaxaEntrega?.dirty && editForm.controls.cobraTaxaEntrega?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.cobraTaxaEntrega?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newacaipaideguaApp.caracteristica.valor" for="field_valor">Valor</label>
+                    <input type="number" class="form-control" name="valor" id="field_valor"
+                        [(ngModel)]="caracteristica.valor" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newacaipaideguaApp.caracteristica.observacao" for="field_observacao">Observacao</label>
+                    <input type="text" class="form-control" name="observacao" id="field_observacao"
+                        [(ngModel)]="caracteristica.observacao" />
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+{
+    "name": "Email",
+    "fields": [
+        {
+            "fieldName": "endereco",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "estabelecimento",
+            "otherEntityRelationshipName": "email",
+            "relationshipName": "estabelecimento",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190324132735",
+    "entityTableName": "email",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,37 @@
+{
+    "name": "TabelaPreco",
+    "fields": [
+        {
+            "fieldName": "preco",
+            "fieldType": "BigDecimal",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "estabelecimento",
+            "otherEntityRelationshipName": "tabelaPreco",
+            "relationshipName": "estabelecimento",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "produto",
+            "otherEntityRelationshipName": "tabelaPreco",
+            "relationshipName": "produto",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190324132741",
+    "entityTableName": "tabela_preco",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

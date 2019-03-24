@@ -1,0 +1,22 @@
+{
+    "newacaipaideguaApp": {
+        "email": {
+            "home": {
+                "title": "Emails",
+                "createLabel": "Criar novo Email",
+                "createOrEditLabel": "Criar ou editar Email"
+            },
+            "created": "Um novo Email foi criado com o identificador {{ param }}",
+            "updated": "Um Email foi atualizado com o identificador {{ param }}",
+            "deleted": "Um Email foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Email {{ id }}?"
+            },
+            "detail": {
+                "title": "Email"
+            },
+            "endereco": "Endereco",
+            "estabelecimento": "Estabelecimento"
+        }
+    }
+}

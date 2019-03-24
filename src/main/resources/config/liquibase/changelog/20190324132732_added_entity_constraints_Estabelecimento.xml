@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity Estabelecimento.
+    -->
+    <changeSet id="20190324132732-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="user_id"
+                                 baseTableName="estabelecimento"
+                                 constraintName="fk_estabelecimento_user_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="jhi_user"/>
+
+        <addForeignKeyConstraint baseColumnNames="endereco_id"
+                                 baseTableName="estabelecimento"
+                                 constraintName="fk_estabelecimento_endereco_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="endereco"/>
+
+        <addForeignKeyConstraint baseColumnNames="caracteristica_id"
+                                 baseTableName="estabelecimento"
+                                 constraintName="fk_estabelecimento_caracteristica_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="caracteristica"/>
+
+        <addForeignKeyConstraint baseColumnNames="beneficiamento_id"
+                                 baseTableName="estabelecimento"
+                                 constraintName="fk_estabelecimento_beneficiamento_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="beneficiamento"/>
+
+    </changeSet>
+</databaseChangeLog>

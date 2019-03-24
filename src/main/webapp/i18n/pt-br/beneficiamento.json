@@ -1,0 +1,25 @@
+{
+    "newacaipaideguaApp": {
+        "beneficiamento": {
+            "home": {
+                "title": "Beneficiamentos",
+                "createLabel": "Criar novo Beneficiamento",
+                "createOrEditLabel": "Criar ou editar Beneficiamento"
+            },
+            "created": "Um novo Beneficiamento foi criado com o identificador {{ param }}",
+            "updated": "Um Beneficiamento foi atualizado com o identificador {{ param }}",
+            "deleted": "Um Beneficiamento foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Beneficiamento {{ id }}?"
+            },
+            "detail": {
+                "title": "Beneficiamento"
+            },
+            "periodo": "Periodo",
+            "quantidade": "Quantidade",
+            "unidade": "Unidade",
+            "total": "Total",
+            "residuo": "Residuo"
+        }
+    }
+}

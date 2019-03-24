@@ -1,0 +1,61 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="estabelecimento">
+            <h2><span jhiTranslate="newacaipaideguaApp.estabelecimento.detail.title">Estabelecimento</span> {{estabelecimento.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="newacaipaideguaApp.estabelecimento.nome">Nome</span></dt>
+                <dd>
+                    <span>{{estabelecimento.nome}}</span>
+                </dd>
+                <dt><span jhiTranslate="newacaipaideguaApp.estabelecimento.responsavel">Responsavel</span></dt>
+                <dd>
+                    <span>{{estabelecimento.responsavel}}</span>
+                </dd>
+                <dt><span jhiTranslate="newacaipaideguaApp.estabelecimento.status">Status</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'newacaipaideguaApp.Status.' + estabelecimento.status}}">{{estabelecimento.status}}</span>
+                </dd>
+                <dt><span jhiTranslate="newacaipaideguaApp.estabelecimento.conta">Conta</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'newacaipaideguaApp.Conta.' + estabelecimento.conta}}">{{estabelecimento.conta}}</span>
+                </dd>
+                <dt><span jhiTranslate="newacaipaideguaApp.estabelecimento.user">User</span></dt>
+                <dd>
+                    {{estabelecimento.userLogin}}
+                </dd>
+                <dt><span jhiTranslate="newacaipaideguaApp.estabelecimento.endereco">Endereco</span></dt>
+                <dd>
+                    <div *ngIf="estabelecimento.enderecoId">
+                        <a [routerLink]="['/endereco', estabelecimento.enderecoId, 'view']">{{estabelecimento.enderecoId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="newacaipaideguaApp.estabelecimento.caracteristica">Caracteristica</span></dt>
+                <dd>
+                    <div *ngIf="estabelecimento.caracteristicaId">
+                        <a [routerLink]="['/caracteristica', estabelecimento.caracteristicaId, 'view']">{{estabelecimento.caracteristicaId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="newacaipaideguaApp.estabelecimento.beneficiamento">Beneficiamento</span></dt>
+                <dd>
+                    <div *ngIf="estabelecimento.beneficiamentoId">
+                        <a [routerLink]="['/beneficiamento', estabelecimento.beneficiamentoId, 'view']">{{estabelecimento.beneficiamentoId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/estabelecimento', estabelecimento.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

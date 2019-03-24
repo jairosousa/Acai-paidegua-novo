@@ -1,0 +1,74 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="newacaipaideguaApp.tabelaPreco.home.title">Tabela Precos</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-tabela-preco" [routerLink]="['/tabela-preco/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="newacaipaideguaApp.tabelaPreco.home.createLabel">
+            Create new Tabela Preco
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="tabelaPrecos">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="preco"><span jhiTranslate="newacaipaideguaApp.tabelaPreco.preco">Preco</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="estabelecimentoId"><span jhiTranslate="newacaipaideguaApp.tabelaPreco.estabelecimento">Estabelecimento</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="produtoId"><span jhiTranslate="newacaipaideguaApp.tabelaPreco.produto">Produto</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let tabelaPreco of tabelaPrecos ;trackBy: trackId">
+                <td><a [routerLink]="['/tabela-preco', tabelaPreco.id, 'view' ]">{{tabelaPreco.id}}</a></td>
+                <td>{{tabelaPreco.preco}}</td>
+                <td>
+                    <div *ngIf="tabelaPreco.estabelecimentoId">
+                        <a [routerLink]="['../estabelecimento', tabelaPreco.estabelecimentoId , 'view' ]" >{{tabelaPreco.estabelecimentoId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="tabelaPreco.produtoId">
+                        <a [routerLink]="['../produto', tabelaPreco.produtoId , 'view' ]" >{{tabelaPreco.produtoId}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/tabela-preco', tabelaPreco.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/tabela-preco', tabelaPreco.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', 'tabela-preco', { outlets: { popup: tabelaPreco.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="tabelaPrecos && tabelaPrecos.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

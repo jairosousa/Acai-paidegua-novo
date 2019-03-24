@@ -1,0 +1,51 @@
+{
+    "name": "Beneficiamento",
+    "fields": [
+        {
+            "fieldName": "periodo",
+            "fieldType": "Periodo",
+            "fieldValues": "SAFRA,ENTRE_SAFRA,FORA_SAFRA",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "quantidade",
+            "fieldType": "BigDecimal",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "unidade",
+            "fieldType": "Unidade",
+            "fieldValues": "LATA,SACA,RAZA",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "total",
+            "fieldType": "BigDecimal"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "residuo",
+            "otherEntityRelationshipName": "beneficiamento",
+            "relationshipName": "residuo",
+            "otherEntityField": "id",
+            "ownerSide": true
+        }
+    ],
+    "changelogDate": "20190324132743",
+    "entityTableName": "beneficiamento",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

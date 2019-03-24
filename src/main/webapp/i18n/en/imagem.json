@@ -1,0 +1,25 @@
+{
+    "newacaipaideguaApp": {
+        "imagem": {
+            "home": {
+                "title": "Imagems",
+                "createLabel": "Create a new Imagem",
+                "createOrEditLabel": "Create or edit a Imagem"
+            },
+            "created": "A new Imagem is created with identifier {{ param }}",
+            "updated": "A Imagem is updated with identifier {{ param }}",
+            "deleted": "A Imagem is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Imagem {{ id }}?"
+            },
+            "detail": {
+                "title": "Imagem"
+            },
+            "title": "Title",
+            "descricao": "Descricao",
+            "imagem": "Imagem",
+            "uploaded": "Uploaded",
+            "estabelecimento": "Estabelecimento"
+        }
+    }
+}

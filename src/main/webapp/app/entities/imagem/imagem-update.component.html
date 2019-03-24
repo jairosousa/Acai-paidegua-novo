@@ -1,0 +1,65 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-imagem-heading" jhiTranslate="newacaipaideguaApp.imagem.home.createOrEditLabel">Create or edit a Imagem</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!imagem.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="imagem.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newacaipaideguaApp.imagem.title" for="field_title">Title</label>
+                    <input type="text" class="form-control" name="title" id="field_title"
+                        [(ngModel)]="imagem.title" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newacaipaideguaApp.imagem.descricao" for="field_descricao">Descricao</label>
+                    <input type="text" class="form-control" name="descricao" id="field_descricao"
+                        [(ngModel)]="imagem.descricao" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newacaipaideguaApp.imagem.imagem" for="field_imagem">Imagem</label>
+                    <div>
+                        <img [src]="'data:' + imagem.imagemContentType + ';base64,' + imagem.imagem" style="max-height: 100px;" *ngIf="imagem.imagem" alt="imagem image"/>
+                        <div *ngIf="imagem.imagem" class="form-text text-danger clearfix">
+                            <span class="pull-left">{{imagem.imagemContentType}}, {{byteSize(imagem.imagem)}}</span>
+                            <button type="button" (click)="clearInputImage('imagem', 'imagemContentType', 'fileImage')" class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon [icon]="'times'"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_imagem" (change)="setFileData($event, imagem, 'imagem', true)" accept="image/*" jhiTranslate="entity.action.addimage"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="imagem" id="field_imagem"
+                        [(ngModel)]="imagem.imagem" />
+                    <input type="hidden" class="form-control" name="imagemContentType" id="field_imagemContentType"
+                        [(ngModel)]="imagem.imagemContentType" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newacaipaideguaApp.imagem.uploaded" for="field_uploaded">Uploaded</label>
+                    <div class="d-flex">
+                        <input id="field_uploaded" type="datetime-local" class="form-control" name="uploaded" [(ngModel)]="uploaded" placeholder="YYYY-MM-DD HH:mm"
+                        />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newacaipaideguaApp.imagem.estabelecimento" for="field_estabelecimento">Estabelecimento</label>
+                    <select class="form-control" id="field_estabelecimento" name="estabelecimento" [(ngModel)]="imagem.estabelecimentoId" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="estabelecimentoOption.id" *ngFor="let estabelecimentoOption of estabelecimentos; trackBy: trackEstabelecimentoById">{{estabelecimentoOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

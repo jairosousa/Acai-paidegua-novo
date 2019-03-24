@@ -1,0 +1,23 @@
+{
+    "newacaipaideguaApp": {
+        "tabelaPreco": {
+            "home": {
+                "title": "Tabela Precos",
+                "createLabel": "Criar novo Tabela Preco",
+                "createOrEditLabel": "Criar ou editar Tabela Preco"
+            },
+            "created": "Um novo Tabela Preco foi criado com o identificador {{ param }}",
+            "updated": "Um Tabela Preco foi atualizado com o identificador {{ param }}",
+            "deleted": "Um Tabela Preco foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Tabela Preco {{ id }}?"
+            },
+            "detail": {
+                "title": "Tabela Preco"
+            },
+            "preco": "Preco",
+            "estabelecimento": "Estabelecimento",
+            "produto": "Produto"
+        }
+    }
+}

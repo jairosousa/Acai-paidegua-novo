@@ -1,0 +1,26 @@
+{
+    "newacaipaideguaApp": {
+        "caracteristica": {
+            "home": {
+                "title": "Caracteristicas",
+                "createLabel": "Create a new Caracteristica",
+                "createOrEditLabel": "Create or edit a Caracteristica"
+            },
+            "created": "A new Caracteristica is created with identifier {{ param }}",
+            "updated": "A Caracteristica is updated with identifier {{ param }}",
+            "deleted": "A Caracteristica is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Caracteristica {{ id }}?"
+            },
+            "detail": {
+                "title": "Caracteristica"
+            },
+            "possuiSelo": "Possui Selo",
+            "possuiRestaurante": "Possui Restaurante",
+            "areaProducaoIsolada": "Area Producao Isolada",
+            "cobraTaxaEntrega": "Cobra Taxa Entrega",
+            "valor": "Valor",
+            "observacao": "Observacao"
+        }
+    }
+}

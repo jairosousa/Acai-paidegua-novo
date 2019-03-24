@@ -1,0 +1,22 @@
+{
+    "newacaipaideguaApp": {
+        "geolocalizacao": {
+            "home": {
+                "title": "Geolocalizacaos",
+                "createLabel": "Criar novo Geolocalizacao",
+                "createOrEditLabel": "Criar ou editar Geolocalizacao"
+            },
+            "created": "Um novo Geolocalizacao foi criado com o identificador {{ param }}",
+            "updated": "Um Geolocalizacao foi atualizado com o identificador {{ param }}",
+            "deleted": "Um Geolocalizacao foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Geolocalizacao {{ id }}?"
+            },
+            "detail": {
+                "title": "Geolocalizacao"
+            },
+            "latitude": "Latitude",
+            "longitude": "Longitude"
+        }
+    }
+}

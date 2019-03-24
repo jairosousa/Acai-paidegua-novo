@@ -1,0 +1,38 @@
+{
+    "name": "RedeSociais",
+    "fields": [
+        {
+            "fieldName": "url",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "nome",
+            "fieldType": "RedeSocial",
+            "fieldValues": "LINKEDIN,FACEBOOK,TWITTER,YOUTUBE,INSTAGRAM,GITHUB",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "estabelecimento",
+            "otherEntityRelationshipName": "redeSociais",
+            "relationshipName": "estabelecimento",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190324132736",
+    "entityTableName": "rede_sociais",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}
