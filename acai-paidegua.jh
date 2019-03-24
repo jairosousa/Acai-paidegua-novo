@@ -1,0 +1,144 @@
+entity Estabelecimento {
+	nome String required,
+    responsavel String,
+    status Status,
+    conta Conta
+}
+
+entity Endereco {
+	cep String,
+    logradouro String required
+    complemento String,
+    numero String,
+    bairro String required,
+    cidade String required,
+    uf String
+}
+
+entity Geolocalizacao {
+	latitude String required,
+    longitude String required
+}
+
+entity Email {
+ endereco String required 
+}
+
+entity RedeSociais {
+	url String required,
+    nome RedeSocial required
+}
+
+entity Telefone {
+	operadora Operadora,
+    numero String required
+}
+
+entity Imagem {
+	title String,
+    descricao String,
+    imagem ImageBlob,
+    uploaded Instant
+}
+
+entity Caracteristica {
+	possuiSelo Boolean required,
+    possuiRestaurante Boolean required,
+    areaProducaoIsolada Boolean required,
+    cobraTaxaEntrega Boolean required,
+    valor BigDecimal,
+    observacao String
+}
+
+entity Produto {
+	nome String required,
+	descricao String    
+}
+
+entity TabelaPreco {
+ preco BigDecimal required
+}
+
+entity HorarioFuncionamento {
+	tipo TipoHorario required,
+    diasSemana String required,
+    hrAbertura String required,
+    hrFechamento String required
+}
+
+entity Beneficiamento {
+	periodo Periodo required,
+    quantidade BigDecimal required,
+    unidade Unidade required,
+    total BigDecimal
+}
+
+entity Residuo {
+	destino Destino required,
+    outro String,
+    custo BigDecimal,
+    responsavel String
+}
+
+enum Conta {
+ FREE, PREMIUM
+}
+
+enum Destino {
+	LIXEIRO, MEIO_AMBIENTE, OUTROS
+}
+
+enum Unidade {
+	LATA, SACA, RAZA
+}
+
+enum Periodo {
+	SAFRA, ENTRE_SAFRA, FORA_SAFRA
+}
+
+enum TipoHorario {
+    COMERCIAL, DELIVERY
+}
+
+enum RedeSocial {
+    LINKEDIN, FACEBOOK, TWITTER, YOUTUBE, INSTAGRAM, GITHUB
+}
+
+enum Status {
+	PENDENTE,
+    RECEBIDO,
+    ANALISE
+}
+
+enum Operadora {
+	CLARO, OI, TIM, VIVO
+}
+
+relationship OneToOne {
+	Estabelecimento{user(login)} to User{estabelecimento},
+    Estabelecimento{endereco} to Endereco,
+    Endereco{gelocalizacao} to Geolocalizacao,
+    Estabelecimento{caracteristica} to Caracteristica,
+    Estabelecimento{beneficiamento} to Beneficiamento,
+    Beneficiamento{residuo} to Residuo
+}
+
+relationship ManyToOne {
+	Imagem{estabelecimento} to Estabelecimento,
+    Email{estabelecimento} to Estabelecimento,
+    RedeSociais{estabelecimento} to Estabelecimento,
+    Telefone{estabelecimento} to Estabelecimento,
+    HorarioFuncionamento{estabelecimento} to Estabelecimento,
+    TabelaPreco{estabelecimento} to Estabelecimento,
+    TabelaPreco{produto} to Produto
+}
+
+// Set pagination options
+paginate Estabelecimento, Produto, Beneficiamento, TabelaPreco with pagination
+
+// Use Data Transfert Objects (DTO)
+dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl
+
