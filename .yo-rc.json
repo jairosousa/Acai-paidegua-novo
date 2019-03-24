@@ -1,0 +1,44 @@
+{
+  "generator-jhipster": {
+    "applicationType": "monolith",
+    "gitCompany": "",
+    "baseName": "newacaipaidegua",
+    "packageName": "br.com.acaipaidegua",
+    "packageFolder": "br/com/acaipaidegua",
+    "serverPort": 8080,
+    "serviceDiscoveryType": false,
+    "authenticationType": "jwt",
+    "uaaBaseName": "../uaa",
+    "cacheProvider": "no",
+    "enableHibernateCache": false,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "prodDatabaseType": "mysql",
+    "searchEngine": false,
+    "enableSwaggerCodegen": "true",
+    "messageBroker": false,
+    "buildTool": "maven",
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "testFrameworks": [
+      "cucumber"
+    ],
+    "enableTranslation": true,
+    "nativeLanguage": "pt-br",
+    "languages": [
+      "en",
+      "pt-br"
+    ],
+    "clientFramework": "angularX",
+    "jhiPrefix": "jhi",
+    "jhipsterVersion": "5.8.2",
+    "jwtSecretKey": "MzQ1MWNmZDJiYzg3NDkxMzFlYzA0MzQ0OWJiMDA0ZmE1OTllZjJjYzJkMjQyZGU1NjI4MTJhMTU4NDQ2MzE5MTE4NjE1MzE3ODk3NzVhYTBiN2ZkM2VkNmY3ZThjNDQ5NjI1NzkwNzBlOWI4OWFmYjE0Njk0MDdjOGNlNWRkMjQ=",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": []
+  },
+  "git-provider": "GitHub",
+  "git-company": "jairosousa",
+  "repository-name": "Acai-paidegua-novo"
+}
