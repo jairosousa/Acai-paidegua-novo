@@ -1,0 +1,50 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="imagem">
+            <h2><span jhiTranslate="newacaipaideguaApp.imagem.detail.title">Imagem</span> {{imagem.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="newacaipaideguaApp.imagem.title">Title</span></dt>
+                <dd>
+                    <span>{{imagem.title}}</span>
+                </dd>
+                <dt><span jhiTranslate="newacaipaideguaApp.imagem.descricao">Descricao</span></dt>
+                <dd>
+                    <span>{{imagem.descricao}}</span>
+                </dd>
+                <dt><span jhiTranslate="newacaipaideguaApp.imagem.imagem">Imagem</span></dt>
+                <dd>
+                    <div *ngIf="imagem.imagem">
+                        <a (click)="openFile(imagem.imagemContentType, imagem.imagem)">
+                            <img [src]="'data:' + imagem.imagemContentType + ';base64,' + imagem.imagem" style="max-width: 100%;" alt="imagem image"/>
+                        </a>
+                        {{imagem.imagemContentType}}, {{byteSize(imagem.imagem)}}
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="newacaipaideguaApp.imagem.uploaded">Uploaded</span></dt>
+                <dd>
+                    <span>{{imagem.uploaded}}</span>
+                </dd>
+                <dt><span jhiTranslate="newacaipaideguaApp.imagem.estabelecimento">Estabelecimento</span></dt>
+                <dd>
+                    <div *ngIf="imagem.estabelecimentoId">
+                        <a [routerLink]="['/estabelecimento', imagem.estabelecimentoId, 'view']">{{imagem.estabelecimentoId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/imagem', imagem.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

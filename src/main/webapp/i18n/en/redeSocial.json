@@ -1,0 +1,13 @@
+{
+    "newacaipaideguaApp": {
+        "RedeSocial": {
+            "null": "",
+            "LINKEDIN": "LINKEDIN",
+            "FACEBOOK": "FACEBOOK",
+            "TWITTER": "TWITTER",
+            "YOUTUBE": "YOUTUBE",
+            "INSTAGRAM": "INSTAGRAM",
+            "GITHUB": "GITHUB"
+        }
+    }
+}

@@ -1,0 +1,11 @@
+{
+    "newacaipaideguaApp": {
+        "Operadora": {
+            "null": "",
+            "CLARO": "CLARO",
+            "OI": "OI",
+            "TIM": "TIM",
+            "VIVO": "VIVO"
+        }
+    }
+}

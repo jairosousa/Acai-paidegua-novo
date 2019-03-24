@@ -1,0 +1,10 @@
+{
+    "newacaipaideguaApp": {
+        "Periodo": {
+            "null": "",
+            "SAFRA": "SAFRA",
+            "ENTRE_SAFRA": "ENTRE_SAFRA",
+            "FORA_SAFRA": "FORA_SAFRA"
+        }
+    }
+}

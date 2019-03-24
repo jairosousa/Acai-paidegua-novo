@@ -1,0 +1,23 @@
+{
+    "newacaipaideguaApp": {
+        "telefone": {
+            "home": {
+                "title": "Telefones",
+                "createLabel": "Criar novo Telefone",
+                "createOrEditLabel": "Criar ou editar Telefone"
+            },
+            "created": "Um novo Telefone foi criado com o identificador {{ param }}",
+            "updated": "Um Telefone foi atualizado com o identificador {{ param }}",
+            "deleted": "Um Telefone foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Telefone {{ id }}?"
+            },
+            "detail": {
+                "title": "Telefone"
+            },
+            "operadora": "Operadora",
+            "numero": "Numero",
+            "estabelecimento": "Estabelecimento"
+        }
+    }
+}

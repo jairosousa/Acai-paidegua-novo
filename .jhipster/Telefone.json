@@ -1,0 +1,35 @@
+{
+    "name": "Telefone",
+    "fields": [
+        {
+            "fieldName": "operadora",
+            "fieldType": "Operadora",
+            "fieldValues": "CLARO,OI,TIM,VIVO"
+        },
+        {
+            "fieldName": "numero",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "estabelecimento",
+            "otherEntityRelationshipName": "telefone",
+            "relationshipName": "estabelecimento",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190324132737",
+    "entityTableName": "telefone",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

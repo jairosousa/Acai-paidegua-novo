@@ -1,0 +1,24 @@
+{
+    "newacaipaideguaApp": {
+        "residuo": {
+            "home": {
+                "title": "Residuos",
+                "createLabel": "Criar novo Residuo",
+                "createOrEditLabel": "Criar ou editar Residuo"
+            },
+            "created": "Um novo Residuo foi criado com o identificador {{ param }}",
+            "updated": "Um Residuo foi atualizado com o identificador {{ param }}",
+            "deleted": "Um Residuo foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Residuo {{ id }}?"
+            },
+            "detail": {
+                "title": "Residuo"
+            },
+            "destino": "Destino",
+            "outro": "Outro",
+            "custo": "Custo",
+            "responsavel": "Responsavel"
+        }
+    }
+}

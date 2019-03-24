@@ -1,0 +1,23 @@
+{
+    "newacaipaideguaApp": {
+        "redeSociais": {
+            "home": {
+                "title": "Rede Sociais",
+                "createLabel": "Criar novo Rede Sociais",
+                "createOrEditLabel": "Criar ou editar Rede Sociais"
+            },
+            "created": "Um novo Rede Sociais foi criado com o identificador {{ param }}",
+            "updated": "Um Rede Sociais foi atualizado com o identificador {{ param }}",
+            "deleted": "Um Rede Sociais foi deletado com o identificador {{ param }}",
+            "delete": {
+                "question": "Tem certeza de que deseja excluir Rede Sociais {{ id }}?"
+            },
+            "detail": {
+                "title": "Rede Sociais"
+            },
+            "url": "Url",
+            "nome": "Nome",
+            "estabelecimento": "Estabelecimento"
+        }
+    }
+}

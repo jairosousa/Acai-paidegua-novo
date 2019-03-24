@@ -1,0 +1,10 @@
+{
+    "newacaipaideguaApp": {
+        "Destino": {
+            "null": "",
+            "LIXEIRO": "LIXEIRO",
+            "MEIO_AMBIENTE": "MEIO_AMBIENTE",
+            "OUTROS": "OUTROS"
+        }
+    }
+}

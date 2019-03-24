@@ -1,0 +1,69 @@
+{
+    "name": "Estabelecimento",
+    "fields": [
+        {
+            "fieldName": "nome",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "responsavel",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "status",
+            "fieldType": "Status",
+            "fieldValues": "PENDENTE,RECEBIDO,ANALISE"
+        },
+        {
+            "fieldName": "conta",
+            "fieldType": "Conta",
+            "fieldValues": "FREE,PREMIUM"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "user",
+            "otherEntityRelationshipName": "estabelecimento",
+            "relationshipName": "user",
+            "otherEntityField": "login",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "endereco",
+            "otherEntityRelationshipName": "estabelecimento",
+            "relationshipName": "endereco",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "caracteristica",
+            "otherEntityRelationshipName": "estabelecimento",
+            "relationshipName": "caracteristica",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "beneficiamento",
+            "otherEntityRelationshipName": "estabelecimento",
+            "relationshipName": "beneficiamento",
+            "otherEntityField": "id",
+            "ownerSide": true
+        }
+    ],
+    "changelogDate": "20190324132732",
+    "entityTableName": "estabelecimento",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

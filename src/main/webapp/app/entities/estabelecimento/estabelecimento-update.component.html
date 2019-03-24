@@ -1,0 +1,83 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-estabelecimento-heading" jhiTranslate="newacaipaideguaApp.estabelecimento.home.createOrEditLabel">Create or edit a Estabelecimento</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!estabelecimento.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="estabelecimento.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newacaipaideguaApp.estabelecimento.nome" for="field_nome">Nome</label>
+                    <input type="text" class="form-control" name="nome" id="field_nome"
+                        [(ngModel)]="estabelecimento.nome" required/>
+                    <div [hidden]="!(editForm.controls.nome?.dirty && editForm.controls.nome?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.nome?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newacaipaideguaApp.estabelecimento.responsavel" for="field_responsavel">Responsavel</label>
+                    <input type="text" class="form-control" name="responsavel" id="field_responsavel"
+                        [(ngModel)]="estabelecimento.responsavel" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newacaipaideguaApp.estabelecimento.status" for="field_status">Status</label>
+                    <select class="form-control" name="status" [(ngModel)]="estabelecimento.status" id="field_status" >
+                        <option value="PENDENTE">{{'newacaipaideguaApp.Status.PENDENTE' | translate}}</option>
+                        <option value="RECEBIDO">{{'newacaipaideguaApp.Status.RECEBIDO' | translate}}</option>
+                        <option value="ANALISE">{{'newacaipaideguaApp.Status.ANALISE' | translate}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newacaipaideguaApp.estabelecimento.conta" for="field_conta">Conta</label>
+                    <select class="form-control" name="conta" [(ngModel)]="estabelecimento.conta" id="field_conta" >
+                        <option value="FREE">{{'newacaipaideguaApp.Conta.FREE' | translate}}</option>
+                        <option value="PREMIUM">{{'newacaipaideguaApp.Conta.PREMIUM' | translate}}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newacaipaideguaApp.estabelecimento.user" for="field_user">User</label>
+                    <select class="form-control" id="field_user" name="user" [(ngModel)]="estabelecimento.userId" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="userOption.id" *ngFor="let userOption of users; trackBy: trackUserById">{{userOption.login}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newacaipaideguaApp.estabelecimento.endereco" for="field_endereco">Endereco</label>
+                    <select class="form-control" id="field_endereco" name="endereco" [(ngModel)]="estabelecimento.enderecoId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="enderecoOption.id" *ngFor="let enderecoOption of enderecos; trackBy: trackEnderecoById">{{enderecoOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newacaipaideguaApp.estabelecimento.caracteristica" for="field_caracteristica">Caracteristica</label>
+                    <select class="form-control" id="field_caracteristica" name="caracteristica" [(ngModel)]="estabelecimento.caracteristicaId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="caracteristicaOption.id" *ngFor="let caracteristicaOption of caracteristicas; trackBy: trackCaracteristicaById">{{caracteristicaOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newacaipaideguaApp.estabelecimento.beneficiamento" for="field_beneficiamento">Beneficiamento</label>
+                    <select class="form-control" id="field_beneficiamento" name="beneficiamento" [(ngModel)]="estabelecimento.beneficiamentoId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="beneficiamentoOption.id" *ngFor="let beneficiamentoOption of beneficiamentos; trackBy: trackBeneficiamentoById">{{beneficiamentoOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

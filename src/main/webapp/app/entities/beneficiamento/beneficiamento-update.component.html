@@ -1,0 +1,79 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-beneficiamento-heading" jhiTranslate="newacaipaideguaApp.beneficiamento.home.createOrEditLabel">Create or edit a Beneficiamento</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!beneficiamento.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="beneficiamento.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newacaipaideguaApp.beneficiamento.periodo" for="field_periodo">Periodo</label>
+                    <select class="form-control" name="periodo" [(ngModel)]="beneficiamento.periodo" id="field_periodo"  required>
+                        <option value="SAFRA">{{'newacaipaideguaApp.Periodo.SAFRA' | translate}}</option>
+                        <option value="ENTRE_SAFRA">{{'newacaipaideguaApp.Periodo.ENTRE_SAFRA' | translate}}</option>
+                        <option value="FORA_SAFRA">{{'newacaipaideguaApp.Periodo.FORA_SAFRA' | translate}}</option>
+                    </select>
+                    <div [hidden]="!(editForm.controls.periodo?.dirty && editForm.controls.periodo?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.periodo?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newacaipaideguaApp.beneficiamento.quantidade" for="field_quantidade">Quantidade</label>
+                    <input type="number" class="form-control" name="quantidade" id="field_quantidade"
+                        [(ngModel)]="beneficiamento.quantidade" required/>
+                    <div [hidden]="!(editForm.controls.quantidade?.dirty && editForm.controls.quantidade?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.quantidade?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.quantidade?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newacaipaideguaApp.beneficiamento.unidade" for="field_unidade">Unidade</label>
+                    <select class="form-control" name="unidade" [(ngModel)]="beneficiamento.unidade" id="field_unidade"  required>
+                        <option value="LATA">{{'newacaipaideguaApp.Unidade.LATA' | translate}}</option>
+                        <option value="SACA">{{'newacaipaideguaApp.Unidade.SACA' | translate}}</option>
+                        <option value="RAZA">{{'newacaipaideguaApp.Unidade.RAZA' | translate}}</option>
+                    </select>
+                    <div [hidden]="!(editForm.controls.unidade?.dirty && editForm.controls.unidade?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.unidade?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newacaipaideguaApp.beneficiamento.total" for="field_total">Total</label>
+                    <input type="number" class="form-control" name="total" id="field_total"
+                        [(ngModel)]="beneficiamento.total" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="newacaipaideguaApp.beneficiamento.residuo" for="field_residuo">Residuo</label>
+                    <select class="form-control" id="field_residuo" name="residuo" [(ngModel)]="beneficiamento.residuoId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="residuoOption.id" *ngFor="let residuoOption of residuos; trackBy: trackResiduoById">{{residuoOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

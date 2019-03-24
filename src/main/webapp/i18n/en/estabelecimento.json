@@ -1,0 +1,28 @@
+{
+    "newacaipaideguaApp": {
+        "estabelecimento": {
+            "home": {
+                "title": "Estabelecimentos",
+                "createLabel": "Create a new Estabelecimento",
+                "createOrEditLabel": "Create or edit a Estabelecimento"
+            },
+            "created": "A new Estabelecimento is created with identifier {{ param }}",
+            "updated": "A Estabelecimento is updated with identifier {{ param }}",
+            "deleted": "A Estabelecimento is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Estabelecimento {{ id }}?"
+            },
+            "detail": {
+                "title": "Estabelecimento"
+            },
+            "nome": "Nome",
+            "responsavel": "Responsavel",
+            "status": "Status",
+            "conta": "Conta",
+            "user": "User",
+            "endereco": "Endereco",
+            "caracteristica": "Caracteristica",
+            "beneficiamento": "Beneficiamento"
+        }
+    }
+}

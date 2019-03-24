@@ -1,0 +1,25 @@
+{
+    "newacaipaideguaApp": {
+        "horarioFuncionamento": {
+            "home": {
+                "title": "Horario Funcionamentos",
+                "createLabel": "Create a new Horario Funcionamento",
+                "createOrEditLabel": "Create or edit a Horario Funcionamento"
+            },
+            "created": "A new Horario Funcionamento is created with identifier {{ param }}",
+            "updated": "A Horario Funcionamento is updated with identifier {{ param }}",
+            "deleted": "A Horario Funcionamento is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Horario Funcionamento {{ id }}?"
+            },
+            "detail": {
+                "title": "Horario Funcionamento"
+            },
+            "tipo": "Tipo",
+            "diasSemana": "Dias Semana",
+            "hrAbertura": "Hr Abertura",
+            "hrFechamento": "Hr Fechamento",
+            "estabelecimento": "Estabelecimento"
+        }
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "newacaipaideguaApp": {
+        "TipoHorario": {
+            "null": "",
+            "COMERCIAL": "COMERCIAL",
+            "DELIVERY": "DELIVERY"
+        }
+    }
+}

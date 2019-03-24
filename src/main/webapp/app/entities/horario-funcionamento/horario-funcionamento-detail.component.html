@@ -1,0 +1,45 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="horarioFuncionamento">
+            <h2><span jhiTranslate="newacaipaideguaApp.horarioFuncionamento.detail.title">Horario Funcionamento</span> {{horarioFuncionamento.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="newacaipaideguaApp.horarioFuncionamento.tipo">Tipo</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'newacaipaideguaApp.TipoHorario.' + horarioFuncionamento.tipo}}">{{horarioFuncionamento.tipo}}</span>
+                </dd>
+                <dt><span jhiTranslate="newacaipaideguaApp.horarioFuncionamento.diasSemana">Dias Semana</span></dt>
+                <dd>
+                    <span>{{horarioFuncionamento.diasSemana}}</span>
+                </dd>
+                <dt><span jhiTranslate="newacaipaideguaApp.horarioFuncionamento.hrAbertura">Hr Abertura</span></dt>
+                <dd>
+                    <span>{{horarioFuncionamento.hrAbertura}}</span>
+                </dd>
+                <dt><span jhiTranslate="newacaipaideguaApp.horarioFuncionamento.hrFechamento">Hr Fechamento</span></dt>
+                <dd>
+                    <span>{{horarioFuncionamento.hrFechamento}}</span>
+                </dd>
+                <dt><span jhiTranslate="newacaipaideguaApp.horarioFuncionamento.estabelecimento">Estabelecimento</span></dt>
+                <dd>
+                    <div *ngIf="horarioFuncionamento.estabelecimentoId">
+                        <a [routerLink]="['/estabelecimento', horarioFuncionamento.estabelecimentoId, 'view']">{{horarioFuncionamento.estabelecimentoId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/horario-funcionamento', horarioFuncionamento.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

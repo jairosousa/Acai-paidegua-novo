@@ -1,0 +1,35 @@
+{
+    "name": "Residuo",
+    "fields": [
+        {
+            "fieldName": "destino",
+            "fieldType": "Destino",
+            "fieldValues": "LIXEIRO,MEIO_AMBIENTE,OUTROS",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "outro",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "custo",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "responsavel",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20190324132744",
+    "entityTableName": "residuo",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

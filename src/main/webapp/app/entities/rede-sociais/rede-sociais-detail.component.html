@@ -1,0 +1,37 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="redeSociais">
+            <h2><span jhiTranslate="newacaipaideguaApp.redeSociais.detail.title">Rede Sociais</span> {{redeSociais.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="newacaipaideguaApp.redeSociais.url">Url</span></dt>
+                <dd>
+                    <span>{{redeSociais.url}}</span>
+                </dd>
+                <dt><span jhiTranslate="newacaipaideguaApp.redeSociais.nome">Nome</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'newacaipaideguaApp.RedeSocial.' + redeSociais.nome}}">{{redeSociais.nome}}</span>
+                </dd>
+                <dt><span jhiTranslate="newacaipaideguaApp.redeSociais.estabelecimento">Estabelecimento</span></dt>
+                <dd>
+                    <div *ngIf="redeSociais.estabelecimentoId">
+                        <a [routerLink]="['/estabelecimento', redeSociais.estabelecimentoId, 'view']">{{redeSociais.estabelecimentoId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/rede-sociais', redeSociais.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

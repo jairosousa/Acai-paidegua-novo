@@ -1,0 +1,74 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="newacaipaideguaApp.beneficiamento.home.title">Beneficiamentos</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-beneficiamento" [routerLink]="['/beneficiamento/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="newacaipaideguaApp.beneficiamento.home.createLabel">
+            Create new Beneficiamento
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="beneficiamentos">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="periodo"><span jhiTranslate="newacaipaideguaApp.beneficiamento.periodo">Periodo</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="quantidade"><span jhiTranslate="newacaipaideguaApp.beneficiamento.quantidade">Quantidade</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="unidade"><span jhiTranslate="newacaipaideguaApp.beneficiamento.unidade">Unidade</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="total"><span jhiTranslate="newacaipaideguaApp.beneficiamento.total">Total</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="residuoId"><span jhiTranslate="newacaipaideguaApp.beneficiamento.residuo">Residuo</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let beneficiamento of beneficiamentos ;trackBy: trackId">
+                <td><a [routerLink]="['/beneficiamento', beneficiamento.id, 'view' ]">{{beneficiamento.id}}</a></td>
+                <td jhiTranslate="{{'newacaipaideguaApp.Periodo.' + beneficiamento.periodo}}">{{beneficiamento.periodo}}</td>
+                <td>{{beneficiamento.quantidade}}</td>
+                <td jhiTranslate="{{'newacaipaideguaApp.Unidade.' + beneficiamento.unidade}}">{{beneficiamento.unidade}}</td>
+                <td>{{beneficiamento.total}}</td>
+                <td>
+                    <div *ngIf="beneficiamento.residuoId">
+                        <a [routerLink]="['../residuo', beneficiamento.residuoId , 'view' ]" >{{beneficiamento.residuoId}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/beneficiamento', beneficiamento.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/beneficiamento', beneficiamento.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', 'beneficiamento', { outlets: { popup: beneficiamento.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="beneficiamentos && beneficiamentos.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

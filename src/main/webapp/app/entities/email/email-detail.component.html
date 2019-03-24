@@ -1,0 +1,33 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="email">
+            <h2><span jhiTranslate="newacaipaideguaApp.email.detail.title">Email</span> {{email.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="newacaipaideguaApp.email.endereco">Endereco</span></dt>
+                <dd>
+                    <span>{{email.endereco}}</span>
+                </dd>
+                <dt><span jhiTranslate="newacaipaideguaApp.email.estabelecimento">Estabelecimento</span></dt>
+                <dd>
+                    <div *ngIf="email.estabelecimentoId">
+                        <a [routerLink]="['/estabelecimento', email.estabelecimentoId, 'view']">{{email.estabelecimentoId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/email', email.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

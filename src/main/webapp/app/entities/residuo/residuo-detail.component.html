@@ -1,0 +1,39 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="residuo">
+            <h2><span jhiTranslate="newacaipaideguaApp.residuo.detail.title">Residuo</span> {{residuo.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="newacaipaideguaApp.residuo.destino">Destino</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'newacaipaideguaApp.Destino.' + residuo.destino}}">{{residuo.destino}}</span>
+                </dd>
+                <dt><span jhiTranslate="newacaipaideguaApp.residuo.outro">Outro</span></dt>
+                <dd>
+                    <span>{{residuo.outro}}</span>
+                </dd>
+                <dt><span jhiTranslate="newacaipaideguaApp.residuo.custo">Custo</span></dt>
+                <dd>
+                    <span>{{residuo.custo}}</span>
+                </dd>
+                <dt><span jhiTranslate="newacaipaideguaApp.residuo.responsavel">Responsavel</span></dt>
+                <dd>
+                    <span>{{residuo.responsavel}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/residuo', residuo.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,47 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="caracteristica">
+            <h2><span jhiTranslate="newacaipaideguaApp.caracteristica.detail.title">Caracteristica</span> {{caracteristica.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="newacaipaideguaApp.caracteristica.possuiSelo">Possui Selo</span></dt>
+                <dd>
+                    <span>{{caracteristica.possuiSelo}}</span>
+                </dd>
+                <dt><span jhiTranslate="newacaipaideguaApp.caracteristica.possuiRestaurante">Possui Restaurante</span></dt>
+                <dd>
+                    <span>{{caracteristica.possuiRestaurante}}</span>
+                </dd>
+                <dt><span jhiTranslate="newacaipaideguaApp.caracteristica.areaProducaoIsolada">Area Producao Isolada</span></dt>
+                <dd>
+                    <span>{{caracteristica.areaProducaoIsolada}}</span>
+                </dd>
+                <dt><span jhiTranslate="newacaipaideguaApp.caracteristica.cobraTaxaEntrega">Cobra Taxa Entrega</span></dt>
+                <dd>
+                    <span>{{caracteristica.cobraTaxaEntrega}}</span>
+                </dd>
+                <dt><span jhiTranslate="newacaipaideguaApp.caracteristica.valor">Valor</span></dt>
+                <dd>
+                    <span>{{caracteristica.valor}}</span>
+                </dd>
+                <dt><span jhiTranslate="newacaipaideguaApp.caracteristica.observacao">Observacao</span></dt>
+                <dd>
+                    <span>{{caracteristica.observacao}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/caracteristica', caracteristica.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

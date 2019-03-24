@@ -1,0 +1,39 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="tabelaPreco">
+            <h2><span jhiTranslate="newacaipaideguaApp.tabelaPreco.detail.title">Tabela Preco</span> {{tabelaPreco.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="newacaipaideguaApp.tabelaPreco.preco">Preco</span></dt>
+                <dd>
+                    <span>{{tabelaPreco.preco}}</span>
+                </dd>
+                <dt><span jhiTranslate="newacaipaideguaApp.tabelaPreco.estabelecimento">Estabelecimento</span></dt>
+                <dd>
+                    <div *ngIf="tabelaPreco.estabelecimentoId">
+                        <a [routerLink]="['/estabelecimento', tabelaPreco.estabelecimentoId, 'view']">{{tabelaPreco.estabelecimentoId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="newacaipaideguaApp.tabelaPreco.produto">Produto</span></dt>
+                <dd>
+                    <div *ngIf="tabelaPreco.produtoId">
+                        <a [routerLink]="['/produto', tabelaPreco.produtoId, 'view']">{{tabelaPreco.produtoId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/tabela-preco', tabelaPreco.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

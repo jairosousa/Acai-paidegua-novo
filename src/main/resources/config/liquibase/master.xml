@@ -5,6 +5,28 @@
     xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
 
     <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190324132732_added_entity_Estabelecimento.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190324132733_added_entity_Endereco.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190324132734_added_entity_Geolocalizacao.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190324132735_added_entity_Email.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190324132736_added_entity_RedeSociais.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190324132737_added_entity_Telefone.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190324132738_added_entity_Imagem.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190324132739_added_entity_Caracteristica.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190324132740_added_entity_Produto.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190324132741_added_entity_TabelaPreco.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190324132742_added_entity_HorarioFuncionamento.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190324132743_added_entity_Beneficiamento.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190324132744_added_entity_Residuo.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20190324132732_added_entity_constraints_Estabelecimento.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190324132733_added_entity_constraints_Endereco.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190324132735_added_entity_constraints_Email.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190324132736_added_entity_constraints_RedeSociais.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190324132737_added_entity_constraints_Telefone.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190324132738_added_entity_constraints_Imagem.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190324132741_added_entity_constraints_TabelaPreco.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190324132742_added_entity_constraints_HorarioFuncionamento.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190324132743_added_entity_constraints_Beneficiamento.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>

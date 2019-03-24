@@ -1,0 +1,45 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="beneficiamento">
+            <h2><span jhiTranslate="newacaipaideguaApp.beneficiamento.detail.title">Beneficiamento</span> {{beneficiamento.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="newacaipaideguaApp.beneficiamento.periodo">Periodo</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'newacaipaideguaApp.Periodo.' + beneficiamento.periodo}}">{{beneficiamento.periodo}}</span>
+                </dd>
+                <dt><span jhiTranslate="newacaipaideguaApp.beneficiamento.quantidade">Quantidade</span></dt>
+                <dd>
+                    <span>{{beneficiamento.quantidade}}</span>
+                </dd>
+                <dt><span jhiTranslate="newacaipaideguaApp.beneficiamento.unidade">Unidade</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'newacaipaideguaApp.Unidade.' + beneficiamento.unidade}}">{{beneficiamento.unidade}}</span>
+                </dd>
+                <dt><span jhiTranslate="newacaipaideguaApp.beneficiamento.total">Total</span></dt>
+                <dd>
+                    <span>{{beneficiamento.total}}</span>
+                </dd>
+                <dt><span jhiTranslate="newacaipaideguaApp.beneficiamento.residuo">Residuo</span></dt>
+                <dd>
+                    <div *ngIf="beneficiamento.residuoId">
+                        <a [routerLink]="['/residuo', beneficiamento.residuoId, 'view']">{{beneficiamento.residuoId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/beneficiamento', beneficiamento.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

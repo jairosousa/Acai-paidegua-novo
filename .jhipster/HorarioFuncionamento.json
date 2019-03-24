@@ -1,0 +1,52 @@
+{
+    "name": "HorarioFuncionamento",
+    "fields": [
+        {
+            "fieldName": "tipo",
+            "fieldType": "TipoHorario",
+            "fieldValues": "COMERCIAL,DELIVERY",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "diasSemana",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "hrAbertura",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "hrFechamento",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "estabelecimento",
+            "otherEntityRelationshipName": "horarioFuncionamento",
+            "relationshipName": "estabelecimento",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190324132742",
+    "entityTableName": "horario_funcionamento",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

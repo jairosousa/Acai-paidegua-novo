@@ -1,0 +1,62 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="newacaipaideguaApp.redeSociais.home.title">Rede Sociais</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-rede-sociais" [routerLink]="['/rede-sociais/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="newacaipaideguaApp.redeSociais.home.createLabel">
+            Create new Rede Sociais
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="redeSociais">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="newacaipaideguaApp.redeSociais.url">Url</span></th>
+            <th><span jhiTranslate="newacaipaideguaApp.redeSociais.nome">Nome</span></th>
+            <th><span jhiTranslate="newacaipaideguaApp.redeSociais.estabelecimento">Estabelecimento</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let redeSociais of redeSociais ;trackBy: trackId">
+                <td><a [routerLink]="['/rede-sociais', redeSociais.id, 'view' ]">{{redeSociais.id}}</a></td>
+                <td>{{redeSociais.url}}</td>
+                <td jhiTranslate="{{'newacaipaideguaApp.RedeSocial.' + redeSociais.nome}}">{{redeSociais.nome}}</td>
+                <td>
+                    <div *ngIf="redeSociais.estabelecimentoId">
+                        <a [routerLink]="['../estabelecimento', redeSociais.estabelecimentoId , 'view' ]" >{{redeSociais.estabelecimentoId}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/rede-sociais', redeSociais.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/rede-sociais', redeSociais.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', 'rede-sociais', { outlets: { popup: redeSociais.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
