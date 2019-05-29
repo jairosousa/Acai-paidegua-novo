@@ -222,5 +222,26 @@ ui bootstrap tweaks
     text-overflow: ellipsis;
     white-space: nowrap;
 }
+@media (max-width: 576px) {
+    .footer.footer {
+        display: grid;
+        grid-template-rows:
+            1fr
+            1fr
+            1fr;
+        grid-template-areas: 'imagem rede-sociais conteudo';
+    }
 
+    .img-footer {
+        grid-area: imagem;
+    }
+
+    .rede-social-footer {
+        grid-area: rede-sociais;
+    }
+
+    .conteudo-footer {
+        grid-area: conteudo;
+    }
+}
 /* jhipster-needle-scss-add-main JHipster will add new css style */

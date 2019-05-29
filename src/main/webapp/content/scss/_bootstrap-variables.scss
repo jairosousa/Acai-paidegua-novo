@@ -13,6 +13,15 @@ $success: #28a745;
 $info: #17a2b8;
 $warning: #ffc107;
 $danger: #dc3545;
+$pde-acai: #880f41;
+$pde-green: #5f7a0b;
+$pde-yellow: #f4b311;
+
+$theme-colors: (
+    'pde-acai': $pde-acai,
+    'pde-green': $pde-green,
+    'pde-yellow': $pde-yellow
+);
 
 // Options:
 // Quickly modify global styling by enabling or disabling optional features.
@@ -34,7 +43,7 @@ $border-radius-sm: 0.1rem;
 // Body:
 // Settings for the `<body>` element.
 
-$body-bg: #e4e5e6;
+$body-bg: #ffffff;
 
 // Typography:
 // Font, line-height, and color for body text, headings, and more.

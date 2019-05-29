@@ -1,0 +1,25 @@
+.app {
+    margin: 0;
+    display: grid;
+    grid-template-rows:
+        65px
+        1fr
+        65px;
+    grid-template-areas:
+        'header'
+        'content'
+        'footer';
+    height: 100vh;
+}
+
+.app-nav {
+    grid-area: header;
+}
+
+.app-content {
+    grid-area: content;
+}
+
+.app-footer {
+    grid-area: footer;
+}

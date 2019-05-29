@@ -1,0 +1,44 @@
+footer.footer {
+    display: grid;
+    grid-template-columns: 95px 1fr 1fr;
+    grid-template-areas: 'imagem rede-sociais conteudo';
+    height: 100px;
+}
+
+.img-footer {
+    grid-area: imagem;
+}
+
+.rede-social-footer {
+    grid-area: rede-sociais;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 25px;
+    cursor: pointer;
+}
+
+.conteudo-footer {
+    grid-area: conteudo;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 25px;
+    color: #ffffff;
+}
+
+fa-icon {
+    color: #ffffff;
+    font-size: 50px;
+}
+
+fa-icon:hover {
+    background-color: rgba(136, 15, 65, 1);
+    font-size: 50px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+footer img {
+    width: 100%;
+    height: 100%;
+}
