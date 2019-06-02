@@ -3,8 +3,8 @@
         "estabelecimento": {
             "home": {
                 "title": "Estabelecimentos",
-                "createLabel": "Criar novo Estabelecimento",
-                "createOrEditLabel": "Criar ou editar Estabelecimento"
+                "createLabel": "Novo Estabelecimento",
+                "editLabel": "Editar Estabelecimento"
             },
             "created": "Um novo Estabelecimento foi criado com o identificador {{ param }}",
             "updated": "Um Estabelecimento foi atualizado com o identificador {{ param }}",

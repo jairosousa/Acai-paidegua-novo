@@ -3,7 +3,7 @@
         "estabelecimento": {
             "home": {
                 "title": "Estabelecimentos",
-                "createLabel": "Create a new Estabelecimento",
+                "createLabel": "New Estabelecimento",
                 "createOrEditLabel": "Create or edit a Estabelecimento"
             },
             "created": "A new Estabelecimento is created with identifier {{ param }}",

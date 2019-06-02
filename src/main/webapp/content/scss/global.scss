@@ -4,12 +4,26 @@
 Bootstrap tweaks
 ===============================================================*/
 
+body {
+    background-color: rgba(97, 6, 49, 0.95);
+}
+
 body,
-h1,
-h2,
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400 !important;
+    color: #610631;
+}
+
+h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 100 !important;
+}
+
 h3,
 h4 {
-    font-weight: 300;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: normal;
 }
 
 a {
@@ -46,6 +60,15 @@ Generic styles
 
 .ng-invalid:not(form) {
     border-left: 5px solid red;
+}
+
+ngb-tabset {
+    border-radius: 5px;
+}
+
+ngb-tabset li a.active {
+    background: #610631 !important;
+    color: white !important;
 }
 
 /* other generic styles */

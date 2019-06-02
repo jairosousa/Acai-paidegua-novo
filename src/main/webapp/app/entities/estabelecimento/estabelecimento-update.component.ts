@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { HttpResponse, HttpErrorResponse } from '@angular/common/http';
+import { HttpErrorResponse, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
 import { JhiAlertService } from 'ng-jhipster';
-import { IEstabelecimento } from 'app/shared/model/estabelecimento.model';
+import { Conta, IEstabelecimento, Status } from 'app/shared/model/estabelecimento.model';
 import { EstabelecimentoService } from './estabelecimento.service';
 import { IUser, UserService } from 'app/core';
 import { IEndereco } from 'app/shared/model/endereco.model';
@@ -30,6 +30,8 @@ export class EstabelecimentoUpdateComponent implements OnInit {
 
     beneficiamentos: IBeneficiamento[];
 
+    currentAction: string;
+
     constructor(
         protected jhiAlertService: JhiAlertService,
         protected estabelecimentoService: EstabelecimentoService,
@@ -42,8 +44,13 @@ export class EstabelecimentoUpdateComponent implements OnInit {
 
     ngOnInit() {
         this.isSaving = false;
+        this.setCurrentyAction();
         this.activatedRoute.data.subscribe(({ estabelecimento }) => {
             this.estabelecimento = estabelecimento;
+            if (!this.estabelecimento.id) {
+                this.estabelecimento.status = Status.PENDENTE;
+                this.estabelecimento.conta = Conta.FREE;
+            }
         });
         this.userService
             .query()
@@ -173,5 +180,13 @@ export class EstabelecimentoUpdateComponent implements OnInit {
 
     trackBeneficiamentoById(index: number, item: IBeneficiamento) {
         return item.id;
+    }
+
+    private setCurrentyAction() {
+        if (this.activatedRoute.snapshot.routeConfig.path === 'new') {
+            this.currentAction = 'new';
+        } else {
+            this.currentAction = 'edit';
+        }
     }
 }
