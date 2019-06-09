@@ -12,7 +12,7 @@ Main page styles
 
 h1 {
     color: #610631;
-    font-weight: 400;
+    font-weight: 400 !important;
 }
 
 p {
@@ -29,7 +29,12 @@ p {
     .hipster {
         background: url('../../content/images/img_pde/acaipde-orig.png') no-repeat center top;
         background-size: contain;
-        width: 10px;
-        height: 15px;
+        width: 150px;
+        height: 150px;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 30px;
     }
 }

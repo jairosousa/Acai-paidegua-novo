@@ -6,6 +6,9 @@ Bootstrap tweaks
 
 body {
     background-color: rgba(97, 6, 49, 0.95);
+    margin: 0;
+    padding: 0;
+    width: 100%;
 }
 
 body,
@@ -206,19 +209,6 @@ entity detail page css
     }
 }
 
-@media screen and (min-width: 768px) {
-    .row.jh-entity-details > {
-        dt {
-            margin-bottom: 15px;
-        }
-        dd {
-            border-bottom: 1px solid #eee;
-            padding-left: 180px;
-            margin-left: 0;
-        }
-    }
-}
-
 /* ==========================================================================
 ui bootstrap tweaks
 ========================================================================== */
@@ -245,26 +235,5 @@ ui bootstrap tweaks
     text-overflow: ellipsis;
     white-space: nowrap;
 }
-@media (max-width: 576px) {
-    .footer.footer {
-        display: grid;
-        grid-template-rows:
-            1fr
-            1fr
-            1fr;
-        grid-template-areas: 'imagem rede-sociais conteudo';
-    }
 
-    .img-footer {
-        grid-area: imagem;
-    }
-
-    .rede-social-footer {
-        grid-area: rede-sociais;
-    }
-
-    .conteudo-footer {
-        grid-area: conteudo;
-    }
-}
 /* jhipster-needle-scss-add-main JHipster will add new css style */

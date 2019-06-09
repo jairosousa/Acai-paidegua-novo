@@ -1,44 +1,55 @@
-footer.footer {
-    display: grid;
-    grid-template-columns: 95px 1fr 1fr;
-    grid-template-areas: 'imagem rede-sociais conteudo';
-    height: 100px;
+.footer {
+    color: white;
 }
 
-.img-footer {
-    grid-area: imagem;
+.footer-img {
+    width: 60%;
+    height: auto;
 }
 
-.rede-social-footer {
-    grid-area: rede-sociais;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    padding: 0 25px;
-    cursor: pointer;
+.footer-social fa-icon {
+    margin-right: 10px;
+    padding: 2px;
+    color: white;
+    font-size: 40px;
+    border-radius: 40px;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.25);
+    transition: color 0.5s linear;
 }
 
-.conteudo-footer {
-    grid-area: conteudo;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    padding: 0 25px;
-    color: #ffffff;
+.footer-social .face fa-icon {
+    background-color: #3b5998;
 }
 
-fa-icon {
-    color: #ffffff;
-    font-size: 50px;
+.footer-social .twitter fa-icon {
+    background-color: #00acee;
 }
 
-fa-icon:hover {
-    background-color: rgba(136, 15, 65, 1);
-    font-size: 50px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+.footer-social .insta fa-icon {
+    background: #d6249f;
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.25);
 }
 
-footer img {
-    width: 100%;
-    height: 100%;
+.footer-social fa-icon:hover {
+    opacity: 0.8;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (-moz-min-device-pixel-ratio: 2),
+    only screen and (-o-min-device-pixel-ratio: 2/1),
+    only screen and (min-resolution: 192dpi),
+    only screen and (min-resolution: 2dppx) {
+    .footer-img {
+        width: 30%;
+        height: auto;
+    }
+
+    .footer-title-img {
+        text-align: center;
+    }
+
+    .footer-social fa-icon {
+        font-size: 30px;
+    }
 }
